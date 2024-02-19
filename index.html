@@ -1,34 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS Envelope + Letter (Open/Close on Click)</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="envelope-wrapper">
-            <div class="envelope">
-                <div class="letter">
-                    <div class="text">
-                        <strong>Dear Person.</strong>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Numquam labore omnis minus maiores laboriosam, facere in beatae esse. 
-                        </p>
-                    </div>
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <!--RSVP FORM-->
+              <form
+                id="wedding-invite-form"
+                action="https://script.google.com/macros/s/AKfycbwXqdI8-Vq-Dr5-nh1i2zRyLjLeIC-MQC_w6LCrIizGFLEQ4OZHVPWu87iGs2diD0ExVg/exec"
+                method="post"
+              >
+                <h1>Kindly RSVP</h1>
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="first name" required />
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="last name" required />
+
+                <div class="checkbox-group">
+                  <label>Are you attending?</label>
+                  <input
+                    type="checkbox"
+                    id="attendingYes"
+                    name="attending"
+                    value="yes"
+                  />
+                  <label for="attendingYes">Yes</label>
+                  <input
+                    type="checkbox"
+                    id="attendingNo"
+                    name="attending"
+                    value="no"
+                  />
+                  <label for="attendingNo">No</label>
                 </div>
+
+                <label for="numberOfPeople">Number of people attending:</label>
+                <input
+                  type="number"
+                  id="numberOfPeople"
+                  name="number of people attending"
+                  required
+                />
+                <input type="submit" value="Submit" />
+              </form>
+              <!--RSVP FORM-->
             </div>
-            <div class="heart"></div>
+          </div>
+          <div class="letter2">
+            <div class="text">
+              <!-- Info -->
+              <div class="invitation">
+                <div class="initials">
+                  <span class="letters">A</span><span class="y-letter">Y</span
+                  ><span class="letters">M</span>
+                </div>
+                <div class="content" style="text-transform: uppercase">
+                  Mrs. Ikhlas Yono wife of the beloved Jalal Yono<br />
+                  requests the honor of your presence<br />
+                  at the marriage of their son
+                </div>
+                <div class="names">
+                  Andy<br />
+                  to<br />
+                  Megan
+                </div>
+                <div class="details content" style="text-transform: uppercase">
+                  daughter of<br />
+                  Mr. and Mrs. Samir and Fatin Konja
+                </div>
+                <div class="location content" style="text-transform: uppercase">
+                  on Sunday, the fourteenth of April<br />
+                  two thousand and twenty-four<br />
+                  at five o'clock in the evening<br />
+                  St. Thomas Chaldean Catholic Church<br />
+                  6900 West Maple Road<br />
+                  West Bloomfield, Michigan
+                </div>
+                <div
+                  class="reception content"
+                  style="text-transform: uppercase"
+                >
+                  Adult Reception to follow at eight o'clock<br />
+                  <span id="penna" style="text-transform: capitalize"
+                    >Penna's of Sterling</span
+                  ><br />
+                  38400 Van Dyke Avenue<br />
+                  Sterling Heights, Michigan
+                </div>
+              </div>
+              <!-- Info -->
+            </div>
+          </div>
         </div>
+        <div class="heart"></div>
+      </div>
     </div>
     <script>
-        const envelope = document.querySelector('.envelope-wrapper');
-        envelope.addEventListener('click', () => {
-            envelope.classList.toggle('flap');
-        });
+      const envelope = document.querySelector('.envelope-wrapper');
+      envelope.addEventListener('click', () => {
+        envelope.classList.toggle('flap');
+      });
     </script>
-</body>
+  </body>
 </html>
